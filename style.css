@@ -155,6 +155,28 @@ a {
   background: #fff;
 }
 
+/* HERO BUTTON ICON (for both buttons) */
+.btn--consultation::before {
+  content: "";
+  width: 0;
+  height: 22px;
+  flex: 0 0 0;
+
+  background: url("assets/icon-phone.svg") center/22px 22px no-repeat;
+
+  opacity: 0;
+  transform: translateX(-8px) rotate(-10deg);
+  transition: width 0.24s ease, flex-basis 0.24s ease, opacity 0.18s ease, transform 0.24s ease;
+}
+
+/* SHOW ICON ON HOVER */
+.hero__actions .btn--consultation:hover::before,
+.hero__actions .btn--consultation:focus-visible::before {
+  width: 22px;
+  flex-basis: 22px;
+  opacity: 1;
+  transform: translateX(0) rotate(0deg);
+}
 .btn--phone::before {
   content: "";
   width: 26px;
@@ -315,7 +337,7 @@ a {
   border-color: #001fb8;
   color: #ffffff;
 }
-
+  
 .hero {
   min-height: 729px;
   padding: 80px 0 66px;
@@ -425,6 +447,19 @@ a {
 
 .hero__actions .btn {
   width: 213px;
+}
+
+/* ONLY for Book a Consultation (desktop) */
+@media (min-width: 821px) {
+  .hero__actions .btn--consultation {
+    transition: width 0.25s ease, padding 0.25s ease;
+    overflow: hidden;
+  }
+
+  .hero__actions .btn--consultation:hover,
+  .hero__actions .btn--consultation:focus-visible {
+    width: 240px; /* increase slightly */
+  }
 }
 
 .hero__visual {
