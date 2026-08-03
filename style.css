@@ -25,7 +25,7 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Plus Jakarta Sans', Roboto, Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   color: var(--body);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
@@ -95,7 +95,7 @@ a {
   align-items: center;
   gap: 48px;
   margin-inline: auto;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   color: #555555;
 }
@@ -585,8 +585,8 @@ a {
 
 .feature__body p {
   margin: 11px 0 0;
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 18px;
+  line-height: 32px;
   color: var(--body);
   font-weight: 400;
 }
@@ -773,7 +773,7 @@ a {
   }
 
   .feature__body p {
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 18px;
+    line-height: 32px;
   }
 }
