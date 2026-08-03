@@ -2,7 +2,7 @@
   --bg: #ffffff;
   --surface: #fafbff;
   --text: #000000;
-  --body: #000000;
+  --body: #595959;
   --primary: #4356d6;
   --primary-dark: #3345bf;
   --primary-soft: #e2e7ff;
@@ -25,7 +25,7 @@ html {
 
 body {
   margin: 0;
-  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Roboto, Arial, Helvetica, sans-serif;
   color: var(--body);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
@@ -95,9 +95,9 @@ a {
   align-items: center;
   gap: 48px;
   margin-inline: auto;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
-  color: #282828;
+  color: #555555;
 }
 
 .nav__links a {
@@ -405,6 +405,7 @@ a {
   font-size: 18px;
   line-height: 32px;
   color: var(--body);
+  font-weight: 400;
 }
 
 .hero__bullets {
@@ -422,6 +423,7 @@ a {
   font-size: 18px;
   line-height: 32px;
   color: var(--body);
+  font-weight: 400;
 }
 
 .hero__bullets li::before {
@@ -578,13 +580,15 @@ a {
   font-size: 24px;
   line-height: 32px;
   color: var(--text);
+  font-weight: 600;
 }
 
 .feature__body p {
   margin: 11px 0 0;
-  font-size: 18px;
-  line-height: 32px;
+  font-size: 16px;
+  line-height: 26px;
   color: var(--body);
+  font-weight: 400;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -769,7 +773,7 @@ a {
   }
 
   .feature__body p {
-    font-size: 18px;
-    line-height: 32px;
+    font-size: 16px;
+    line-height: 26px;
   }
 }
