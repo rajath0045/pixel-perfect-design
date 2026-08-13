@@ -92,7 +92,7 @@ a {
 
 .brand__name {
   font-size: 43px;
-  font-weight: 900;
+  font-weight: 700;
   line-height: 50px;
   color: var(--text);
 }
@@ -188,33 +188,6 @@ a {
   height: 26px;
   flex: 0 0 26px;
   background: url("assets/icon-phone.svg") center/26px 26px no-repeat;
-}
-
-@media (max-width: 900px) {
-  .mobile-menu__cta.btn--phone::before {
-    width: 26px;
-    flex: 0 0 26px;
-    opacity: 1;
-    transform: none;
-  }
-
-  .mobile-menu__cta.btn--phone:hover::before,
-  .mobile-menu__cta.btn--phone:focus-visible::before {
-    width: 26px;
-    flex: 0 0 26px;
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .mobile-menu__cta:hover,
-  .mobile-menu__cta:focus-visible {
-    background: #001fb8;
-    border-color: #001fb8;
-    color: #ffffff;
-
-    transform: translateY(-2px);
-    box-shadow: 0 14px 24px rgba(0, 31, 184, 0.24);
-  }
 }
 
 .btn--outline:hover,
@@ -624,113 +597,18 @@ a {
   }
 }
 
-@media (max-width: 1280px) {
-  :root {
-    --gutter: 48px;
-  }
-
-  .why__intro-grid::after {
-    width: 110px;
-    height: 112px;
-    left: calc(50% - 130px);
+/* ==========================================================================
+   SMALLER DESKTOP / LARGE TABLET (1025px - 1439px)
+   ========================================================================== */
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .hero .container,
+  .nav,
+  .why .container {
+    width: min(1184px, calc(100% - 80px));
   }
 
   .nav {
-    gap: 20px;
-  }
-
-  .nav__links {
-    gap: 24px;
-    font-size: 16px;
-  }
-
-  .hero__grid {
-    grid-template-columns: minmax(420px, 0.9fr) minmax(0, 1fr);
-    gap: 24px;
-  }
-
-  .hero h1 {
-    font-size: 52px;
-    line-height: 68px;
-  }
-
-  .hero__text,
-  .hero__bullets li,
-  .section-head__text,
-  .feature__body p {
-    font-size: 16px;
-    line-height: 28px;
-  }
-
-  .feature {
-    padding: 20px;
-  }
-
-  .hero__visual img {
-    width: 100%;
-    max-width: 610px;
-    height: auto;
-  }
-
-  .hero__visual {
-    margin-top: 0;
-  }
-
-  .why__visual img {
-    width: min(100%, 520px);
-    height: auto;
-  }
-
-  .why__intro-grid,
-  .why__grid {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  }
-
-  .section-head h2 {
-    font-size: 40px;
-    line-height: 56px;
-  }
-}
-
-@media (min-width: 1101px) and (max-width: 1280px) {
-  .why__intro-grid::after {
-    left: calc(50% - 106px);
-    top: clamp(112px, calc((1180px - 100vw) * 0.42 + 128px), 148px);
-  }
-
-  .why__grid {
-    margin-top: clamp(112px, calc((1180px - 100vw) * 0.35 + 126px), 148px);
-  }
-}
-
-@media (min-width: 1281px) and (max-width: 1439px) {
-  .hero__grid {
-    grid-template-columns: 606px minmax(0, 1fr);
-  }
-
-  .hero__visual img {
-    width: 100%;
-    max-width: 739px;
-  }
-
-  .why__intro-grid::after {
-    left: calc(50% - 116px);
-    top: clamp(116px, calc((1320px - 100vw) * 0.7 + 126px), 164px);
-  }
-
-  .why__grid {
-    margin-top: clamp(104px, calc((1320px - 100vw) * 0.45 + 122px), 152px);
-  }
-}
-
-@media (max-width: 1100px) and (min-width: 1026px) {
-  .nav__links {
-    gap: 16px;
-    font-size: 14px;
-  }
-
-  .nav__links a {
-    white-space: nowrap;
+    gap: clamp(16px, 1.8vw, 26px);
   }
 
   .brand {
@@ -752,19 +630,38 @@ a {
     line-height: 40px;
   }
 
+  .nav__links {
+    gap: clamp(14px, 1.65vw, 24px);
+    font-size: clamp(14px, 1.18vw, 16px);
+    white-space: nowrap;
+  }
+
   .btn--sm {
     min-width: 150px;
     padding-inline: 16px;
     font-size: 15px;
   }
 
+  .hero {
+    min-height: auto;
+  }
+
   .hero__grid {
-    grid-template-columns: minmax(390px, 0.95fr) minmax(0, 1fr);
+    grid-template-columns: minmax(390px, 606px) minmax(0, 1fr);
+    gap: clamp(16px, 2vw, 28px);
   }
 
   .hero h1 {
-    font-size: 46px;
-    line-height: 60px;
+    font-size: clamp(46px, 4vw, 58px);
+    line-height: clamp(60px, 5vw, 74px);
+  }
+
+  .hero__text,
+  .hero__bullets li,
+  .section-head__text,
+  .feature__body p {
+    font-size: 16px;
+    line-height: 28px;
   }
 
   .hero__actions {
@@ -772,25 +669,67 @@ a {
   }
 
   .hero__actions .btn {
-    width: 190px;
+    min-width: 190px;
   }
 
-  .section-head h2 {
-    font-size: 32px;
-    line-height: 44px;
+  .hero__visual {
+    margin-top: 0;
+  }
+
+  .hero__visual img {
+    width: 100%;
+    max-width: 660px;
+  }
+
+  .why__intro-grid,
+  .why__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 
   .why__intro-grid::after {
-    left: calc(50% - 70px);
-    top: 130px;
+    left: calc(50% - 130px);
+    top: 112px;
+    width: 110px;
+    height: 112px;
+  }
+
+  .section-head h2 {
+    font-size: clamp(32px, 3.2vw, 40px);
+    line-height: clamp(44px, 4.4vw, 56px);
+  }
+
+  .why__visual img {
+    width: min(100%, 520px);
+  }
+
+  .feature {
+    padding: 20px;
   }
 
   .why__grid {
-    margin-top: 130px;
+    margin-top: 104px;
   }
 }
 
-@media (max-width: 1025px) and (min-width: 901px) {
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .why__intro-grid::after {
+    left: calc(50% - 155px);
+    top: 116px;
+  }
+
+  .hero__visual img {
+    max-width: 610px;
+  }
+
+  .why__grid {
+    margin-top: 124px;
+  }
+}
+
+/* ==========================================================================
+   TABLET (769px - 1024px)
+   ========================================================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
   :root {
     --gutter: 40px;
   }
@@ -887,6 +826,10 @@ a {
     padding: 50px 0 58px;
   }
 
+  .why .container {
+    width: min(calc(100% - 80px), 860px);
+  }
+
   .why__intro-grid {
     grid-template-columns: 1fr;
     gap: 26px;
@@ -932,7 +875,14 @@ a {
   }
 }
 
-@media (max-width: 900px) {
+/* ==========================================================================
+   MOBILE (max-width: 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  :root {
+    --gutter: 24px;
+  }
+
   .site-header {
     position: static;
   }
@@ -947,15 +897,11 @@ a {
     gap: 10px;
   }
 
-  .brand__mark {
-    width: 30.29px;
-    height: 33.13px;
-    flex-basis: 30.29px;
-  }
-
+  .brand__mark,
   .brand__mark img {
     width: 30.29px;
     height: 33.13px;
+    flex-basis: 30.29px;
   }
 
   .brand__name {
@@ -994,15 +940,15 @@ a {
     background: #000000;
   }
 
+  .hero__content {
+    max-width: 100%;
+    text-align: center;
+  }
+
   .hero__grid,
   .why__intro-grid,
   .why__grid {
     grid-template-columns: 1fr;
-  }
-
-  .hero__content {
-    max-width: 100%;
-    text-align: center;
   }
 
   .hero__visual img,
@@ -1013,7 +959,7 @@ a {
   }
 
   .hero__visual {
-    margin-top: -24px;
+    margin-top: 24px;
   }
 
   .hero {
@@ -1085,7 +1031,6 @@ a {
     flex-wrap: nowrap;
   }
 
-
   .section-head h2 {
     font-size: 40px;
     line-height: 48px;
@@ -1115,8 +1060,35 @@ a {
     pointer-events: none;
   }
 
+  /* Mobile menu CTA overrides */
+  .mobile-menu__cta.btn--phone::before {
+    width: 26px;
+    flex: 0 0 26px;
+    opacity: 1;
+    transform: none;
+  }
+
+  .mobile-menu__cta.btn--phone:hover::before,
+  .mobile-menu__cta.btn--phone:focus-visible::before {
+    width: 26px;
+    flex: 0 0 26px;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .mobile-menu__cta:hover,
+  .mobile-menu__cta:focus-visible {
+    background: #001fb8;
+    border-color: #001fb8;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 24px rgba(0, 31, 184, 0.24);
+  }
 }
 
+/* ==========================================================================
+   SMALL MOBILE (max-width: 560px / 360px)
+   ========================================================================== */
 @media (max-width: 560px) {
   :root {
     --gutter: 18px;
@@ -1159,6 +1131,11 @@ a {
     line-height: 32px;
   }
 
+  .section-head h2 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
   .hero__bullets {
     margin: 26px auto 0;
     width: 100%;
@@ -1174,6 +1151,10 @@ a {
     width: 100%;
     max-width: 350px;
     height: auto;
+  }
+
+  .hero__visual {
+    margin-top: 18px;
   }
 
   .hero__actions {
