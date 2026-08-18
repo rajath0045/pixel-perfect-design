@@ -127,12 +127,12 @@ a {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  min-height: 46px;
-  padding: 14px 22px;
+  min-height: 50px;
+  padding: 12px 22px;
   border-radius: var(--radius-sm);
   border: 1px solid transparent;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1;
   white-space: nowrap;
   isolation: isolate;
@@ -141,7 +141,7 @@ a {
 
 .btn--sm {
   min-width: 169px;
-  min-height: 46px;
+  min-height: 50px;
   padding-inline: 22px;
 }
 
@@ -444,6 +444,7 @@ a {
 
 .hero__actions .btn {
   min-width: 213px;
+  min-height: 56px;
 }
 
 .hero__visual {
@@ -540,7 +541,7 @@ a {
   align-items: flex-start;
   gap: 26px;
   width: 100%;
-  min-height: 139px;
+  min-height: 150px;
   padding: 20px;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -554,9 +555,9 @@ a {
 }
 
 .feature__icon {
-  width: 36px;
-  height: 36px;
-  flex: 0 0 36px;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
   display: grid;
   place-items: center;
   border-radius: 0;
@@ -564,8 +565,8 @@ a {
 }
 
 .feature__icon img {
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   object-fit: contain;
   filter: brightness(0) saturate(100%) invert(35%) sepia(55%) saturate(1230%) hue-rotate(209deg) brightness(90%) contrast(92%);
 }
@@ -575,7 +576,7 @@ a {
   font-size: 24px;
   line-height: 32px;
   color: var(--text);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .feature__body p {
@@ -660,8 +661,8 @@ a {
   .hero__bullets li,
   .section-head__text,
   .feature__body p {
-    font-size: 16px;
-    line-height: 28px;
+    font-size: 18px;
+    line-height: 32px;
   }
 
   .hero__actions {
@@ -704,6 +705,7 @@ a {
 
   .feature {
     padding: 20px;
+    min-height: 150px;
   }
 
   .why__grid {
@@ -765,12 +767,12 @@ a {
   .btn--sm {
     min-width: 142px;
     padding-inline: 14px;
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .hero {
     min-height: auto;
-    padding: 48px 0 56px;
+    padding: 58px 0 64px;
   }
 
   .hero .container {
@@ -779,7 +781,7 @@ a {
 
   .hero__grid {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 36px;
   }
 
   .hero__content {
@@ -790,8 +792,8 @@ a {
 
   .hero h1 {
     max-width: 760px;
-    font-size: 52px;
-    line-height: 64px;
+    font-size: 56px;
+    line-height: 72px;
     text-align: center;
   }
 
@@ -813,17 +815,17 @@ a {
   }
 
   .hero__visual {
-    margin-top: -10px;
+    margin-top: 0;
   }
 
   .hero__visual img {
-    width: min(100%, 620px);
+    width: min(100%, 640px);
     height: auto;
   }
 
   .why {
     min-height: auto;
-    padding: 50px 0 58px;
+    padding: 54px 0 72px;
   }
 
   .why .container {
@@ -839,8 +841,8 @@ a {
   .section-head h2 {
     max-width: 760px;
     margin-inline: auto;
-    font-size: 42px;
-    line-height: 54px;
+    font-size: 48px;
+    line-height: 62px;
   }
 
   .section-head__text {
@@ -859,13 +861,13 @@ a {
   }
 
   .why__grid {
-    margin-top: 72px;
+    margin-top: 92px;
     grid-template-columns: 1fr;
     gap: 36px;
   }
 
   .why__visual img {
-    width: min(100%, 470px);
+    width: min(100%, 500px);
     margin-inline: auto;
   }
 
@@ -915,7 +917,7 @@ a {
 
   .btn--sm {
     min-width: 142px;
-    min-height: 36px;
+    min-height: 40px;
     padding-inline: 14px;
     font-size: 14px;
     gap: 8px;
@@ -953,8 +955,8 @@ a {
 
   .hero__visual img,
   .why__visual img {
-    width: min(100%, 560px);
-    max-width: 560px;
+    width: min(100%, 540px);
+    max-width: 540px;
     height: auto;
   }
 
@@ -964,7 +966,7 @@ a {
 
   .hero {
     min-height: auto;
-    padding: 26px 0 40px;
+    padding: 30px 0 52px;
   }
 
   .hero .container {
@@ -1038,10 +1040,11 @@ a {
 
   .hero__actions .btn {
     width: 213px;
+    min-height: 56px;
   }
 
   .why__grid {
-    gap: 38px;
+    gap: 42px;
   }
 
   .why__visual img {
@@ -1086,6 +1089,72 @@ a {
   }
 }
 
+@media (min-width: 700px) and (max-width: 768px) {
+  .hero {
+    padding: 58px 0 64px;
+  }
+
+  .hero h1 {
+    max-width: 700px;
+    font-size: 56px;
+    line-height: 72px;
+  }
+
+  .hero__text {
+    max-width: 680px;
+    margin-top: 26px;
+  }
+
+  .hero__bullets {
+    margin-top: 26px;
+  }
+
+  .hero__actions {
+    margin-top: 30px;
+  }
+
+  .hero__visual {
+    margin-top: 28px;
+  }
+
+  .hero__visual img {
+    width: min(100%, 640px);
+    max-width: 640px;
+  }
+
+  .why {
+    padding: 54px 0 72px;
+  }
+
+  .section-head h2 {
+    max-width: 700px;
+    font-size: 48px;
+    line-height: 62px;
+  }
+
+  .section-head__text {
+    max-width: 680px;
+  }
+
+  .why__grid {
+    margin-top: 92px;
+    gap: 42px;
+  }
+
+  .why__visual img {
+    width: min(100%, 500px);
+  }
+
+  .feature-list {
+    width: min(100%, 594px);
+    margin-inline: auto;
+  }
+
+  .feature {
+    min-height: 150px;
+  }
+}
+
 /* ==========================================================================
    SMALL MOBILE (max-width: 560px / 360px)
    ========================================================================== */
@@ -1096,6 +1165,10 @@ a {
 
   .btn--sm {
     display: none;
+  }
+
+  .site-header {
+    background: #ffffff;
   }
 
   .hero {
