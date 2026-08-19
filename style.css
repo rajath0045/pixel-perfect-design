@@ -127,8 +127,8 @@ a {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  height: 50px;
-  min-height: 50px;
+  height: 46px;
+  min-height: 46px;
   padding: 0 22px;
   border-radius: var(--radius-sm);
   border: 1px solid transparent;
@@ -142,7 +142,7 @@ a {
 
 .btn--sm {
   min-width: 169px;
-  min-height: 50px;
+  min-height: 46px;
   padding-inline: 22px;
 }
 
@@ -377,6 +377,7 @@ a {
 .hero h1 {
   font-size: 64px;
   line-height: 85px;
+  width: 620px;
   max-width: 620px;
 }
 
@@ -456,7 +457,7 @@ a {
 .hero__actions .btn {
   width: 213px;
   min-width: 213px;
-  height: 50px;
+  height: 46px;
 }
 
 .hero__visual {
@@ -691,6 +692,7 @@ a {
   }
 
   .hero h1 {
+    width: auto;
     font-size: clamp(46px, 4vw, 58px);
     line-height: clamp(60px, 5vw, 74px);
   }
@@ -822,6 +824,7 @@ a {
   }
 
   .hero h1 {
+    width: auto;
     max-width: 760px;
     font-size: 56px;
     line-height: 72px;
@@ -1034,6 +1037,7 @@ a {
   }
 
   .hero h1 {
+    width: auto;
     font-size: 38px;
     line-height: 47px;
     max-width: 640px;
@@ -1079,7 +1083,7 @@ a {
 
   .hero__actions .btn {
     width: 213px;
-    min-height: 50px;
+    min-height: 46px;
   }
 
   .why__grid {
@@ -1138,13 +1142,14 @@ a {
   }
 
   .hero h1 {
+    width: auto;
     max-width: 700px;
-    font-size: 56px;
-    line-height: 72px;
+    font-size: 48px;
+    line-height: 64px;
   }
 
   .hero__text {
-    max-width: 640px;
+    max-width: 668px;
     margin-top: 26px;
   }
 
@@ -1157,7 +1162,7 @@ a {
   }
 
   .hero__visual {
-    margin-top: 28px;
+    margin-top: 24px;
   }
 
   .hero__visual img {
@@ -1173,10 +1178,18 @@ a {
     max-width: 700px;
     font-size: 48px;
     line-height: 62px;
+    margin-inline: 0;
+    text-align: left;
   }
 
   .section-head__text {
     max-width: 680px;
+  }
+
+  .why__intro-grid::after {
+    right: 4px;
+    width: 78px;
+    height: 80px;
   }
 
   .why__grid {
@@ -1215,6 +1228,7 @@ a {
   }
 
   .hero h1 {
+    width: auto;
     font-size: 40px;
     line-height: 48px;
     max-width: 100%;
@@ -1341,6 +1355,7 @@ a {
   }
 
   .hero h1 {
+    width: auto;
     font-size: 36px;
     line-height: 44px;
   }
