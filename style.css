@@ -127,8 +127,9 @@ a {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  height: 50px;
   min-height: 50px;
-  padding: 12px 22px;
+  padding: 0 22px;
   border-radius: var(--radius-sm);
   border: 1px solid transparent;
   font-size: 18px;
@@ -175,12 +176,21 @@ a {
   transition: width 0.2s ease, flex-basis 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
 }
 
+.hero__actions .btn--consultation {
+  gap: 0;
+}
+
 .hero__actions .btn--consultation:hover::before,
 .hero__actions .btn--consultation:focus-visible::before {
   width: 26px;
   flex-basis: 26px;
   opacity: 1;
   transform: translateX(0);
+}
+
+.hero__actions .btn--consultation:hover,
+.hero__actions .btn--consultation:focus-visible {
+  gap: 10px;
 }
 .btn--phone::before {
   content: "";
@@ -330,7 +340,8 @@ a {
   width: 100%;
   max-width: 1440px;
   margin-inline: auto;
-  min-height: 829px;
+  height: 729px;
+  min-height: 0;
   padding: 80px 0 66px;
   background: var(--surface);
   overflow: clip;
@@ -443,8 +454,9 @@ a {
 }
 
 .hero__actions .btn {
+  width: 213px;
   min-width: 213px;
-  min-height: 56px;
+  height: 50px;
 }
 
 .hero__visual {
@@ -465,7 +477,7 @@ a {
   width: 100%;
   max-width: 1440px;
   margin-inline: auto;
-  min-height: 870px;
+  height: 870px;
   padding: 50px 0 79px;
   background: #ffffff;
   overflow: hidden;
@@ -493,12 +505,35 @@ a {
 .why__intro-grid::after {
   content: "";
   position: absolute;
-  left: calc(50% - 162px);
-  top: 94px;
+  left: calc(50% - 175px);
+  top: 87px;
   width: 132.23px;
   height: 135.07px;
   background: url("assets/figma-curl-arrow.svg") no-repeat center/contain;
   pointer-events: none;
+}
+
+/* Keep the decorative arrow attached to the heading column on desktop. */
+@media (min-width: 1025px) {
+  .why__intro-grid::after {
+    display: none;
+  }
+
+  .section-head {
+    position: relative;
+  }
+
+  .section-head::after {
+    content: "";
+    position: absolute;
+    /* Figma: X 445.56 / 603.5px column, Y 90.85 / 140px heading block. */
+    left: calc(73.829% - 58px);
+    top: 64.893%;
+    width: 132.23px;
+    height: 135.07px;
+    background: url("assets/figma-curl-arrow.svg") no-repeat center/contain;
+    pointer-events: none;
+  }
 }
 
 .section-head h2 {
@@ -511,6 +546,7 @@ a {
   max-width: 603.5px;
   margin: 0;
   min-width: 0;
+  transform: translateY(4px);
 }
 
 .why__grid {
@@ -525,6 +561,7 @@ a {
   display: grid;
   place-items: center;
   position: relative;
+  transform: translateY(-46px);
 }
 
 .why__visual img {
@@ -539,9 +576,9 @@ a {
 .feature {
   display: flex;
   align-items: flex-start;
-  gap: 26px;
+  gap: 28px;
   width: 100%;
-  min-height: 150px;
+  min-height: 144px;
   padding: 20px;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -555,9 +592,9 @@ a {
 }
 
 .feature__icon {
-  width: 42px;
-  height: 42px;
-  flex: 0 0 42px;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
   display: grid;
   place-items: center;
   border-radius: 0;
@@ -565,8 +602,8 @@ a {
 }
 
 .feature__icon img {
-  width: 42px;
-  height: 42px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
   filter: brightness(0) saturate(100%) invert(35%) sepia(55%) saturate(1230%) hue-rotate(209deg) brightness(90%) contrast(92%);
 }
@@ -582,7 +619,7 @@ a {
 .feature__body p {
   margin: 10px 0 0;
   font-size: 18px;
-  line-height: 31px;
+  line-height: 30px;
   color: #282828;
   font-weight: 400;
 }
@@ -644,6 +681,7 @@ a {
   }
 
   .hero {
+    height: auto;
     min-height: auto;
   }
 
@@ -687,13 +725,6 @@ a {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 
-  .why__intro-grid::after {
-    left: calc(50% - 130px);
-    top: 112px;
-    width: 110px;
-    height: 112px;
-  }
-
   .section-head h2 {
     font-size: clamp(32px, 3.2vw, 40px);
     line-height: clamp(44px, 4.4vw, 56px);
@@ -703,9 +734,13 @@ a {
     width: min(100%, 520px);
   }
 
+  .why__visual {
+    transform: translateY(-40px);
+  }
+
   .feature {
     padding: 20px;
-    min-height: 150px;
+    min-height: 144px;
   }
 
   .why__grid {
@@ -714,11 +749,6 @@ a {
 }
 
 @media (min-width: 1025px) and (max-width: 1280px) {
-  .why__intro-grid::after {
-    left: calc(50% - 155px);
-    top: 116px;
-  }
-
   .hero__visual img {
     max-width: 610px;
   }
@@ -771,6 +801,7 @@ a {
   }
 
   .hero {
+    height: auto;
     min-height: auto;
     padding: 58px 0 64px;
   }
@@ -824,7 +855,8 @@ a {
   }
 
   .why {
-    min-height: auto;
+    height: auto;
+    min-height: 0;
     padding: 54px 0 72px;
   }
 
@@ -871,6 +903,10 @@ a {
     margin-inline: auto;
   }
 
+  .why__visual {
+    transform: none;
+  }
+
   .feature-list {
     width: min(100%, 594px);
     margin-inline: auto;
@@ -887,6 +923,7 @@ a {
 
   .site-header {
     position: static;
+    background: var(--surface);
   }
 
   .nav {
@@ -965,6 +1002,7 @@ a {
   }
 
   .hero {
+    height: auto;
     min-height: auto;
     padding: 30px 0 52px;
   }
@@ -974,6 +1012,7 @@ a {
   }
 
   .why {
+    height: auto;
     padding: 50px 0 48px;
   }
 
@@ -1027,7 +1066,7 @@ a {
   }
 
   .hero__actions {
-    gap: 24px;
+    gap: 16px;
     margin-top: 28px;
     justify-content: center;
     flex-wrap: nowrap;
@@ -1040,7 +1079,7 @@ a {
 
   .hero__actions .btn {
     width: 213px;
-    min-height: 56px;
+    min-height: 50px;
   }
 
   .why__grid {
@@ -1050,6 +1089,10 @@ a {
   .why__visual img {
     width: min(100%, 420px);
     height: auto;
+  }
+
+  .why__visual {
+    transform: none;
   }
 
   .why__visual::after {
@@ -1101,7 +1144,7 @@ a {
   }
 
   .hero__text {
-    max-width: 680px;
+    max-width: 640px;
     margin-top: 26px;
   }
 
@@ -1151,7 +1194,7 @@ a {
   }
 
   .feature {
-    min-height: 150px;
+    min-height: 144px;
   }
 }
 
@@ -1160,15 +1203,11 @@ a {
    ========================================================================== */
 @media (max-width: 560px) {
   :root {
-    --gutter: 18px;
+    --gutter: 16px;
   }
 
   .btn--sm {
     display: none;
-  }
-
-  .site-header {
-    background: #ffffff;
   }
 
   .hero {
@@ -1227,7 +1266,7 @@ a {
   }
 
   .hero__visual {
-    margin-top: 18px;
+    margin-top: 36px;
   }
 
   .hero__actions {
