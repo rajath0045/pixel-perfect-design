@@ -527,11 +527,17 @@ a {
   .section-head::after {
     content: "";
     position: absolute;
-    /* Figma: X 445.56 / 603.5px column, Y 90.85 / 140px heading block. */
-    left: calc(73.829% - 58px);
+    /*
+     * Figma source vector: 102.39px × 88.67px at -53.41°.
+     * The exported SVG already contains that rotation, whose visible bounds are
+     * 132.23px × 135.07px. Position and size are proportional to the
+     * 603.5px × 140px heading column so the relationship stays responsive.
+     */
+    left: 73.829%; /* 445.56 / 603.5 */
     top: 64.893%;
-    width: 132.23px;
-    height: 135.07px;
+    width: min(21.91%, 132.23px); /* 132.23 / 603.5 */
+    height: auto;
+    aspect-ratio: 132.23 / 135.07;
     background: url("assets/figma-curl-arrow.svg") no-repeat center/contain;
     pointer-events: none;
   }
