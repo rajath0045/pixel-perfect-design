@@ -530,16 +530,23 @@ a {
     /*
      * Figma source vector: 102.39px × 88.67px at -53.41°.
      * The exported SVG already contains that rotation, whose visible bounds are
-     * 132.23px × 135.07px. Position and size are proportional to the
-     * 603.5px × 140px heading column so the relationship stays responsive.
+     * 132.23px × 135.07px. Its position is proportional to the
+     * 603.5px × 140px heading column, while its Figma size stays fixed
+     * across desktop widths.
      */
     left: 73.829%; /* 445.56 / 603.5 */
     top: 64.893%;
-    width: min(21.91%, 132.23px); /* 132.23 / 603.5 */
-    height: auto;
-    aspect-ratio: 132.23 / 135.07;
+    width: 132.23px;
+    height: 135.07px;
     background: url("assets/figma-curl-arrow.svg") no-repeat center/contain;
     pointer-events: none;
+  }
+}
+
+/* Keep the curl visually beside "Analysts" on the condensed desktop layout. */
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .section-head::after {
+    left: calc(73.829% - clamp(52px, 4vw, 58px));
   }
 }
 
