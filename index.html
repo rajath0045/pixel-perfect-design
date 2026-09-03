@@ -6,8 +6,8 @@
   <title>Sample Interview 2</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260820-desktop-arrow-left" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260903-figma-parity" />
 </head>
 <body>
   <!-- Header matches the 1440px Figma nav: logo, primary links, and contact CTA. -->
@@ -95,7 +95,11 @@
         </div>
 
         <div class="hero__visual" aria-hidden="true">
-          <img src="assets/figma-hero.png" alt="" width="740" height="607" />
+          <img class="hero__art-desktop" src="assets/figma-hero.png" alt="" width="740" height="607" />
+          <div class="hero__art-mobile">
+            <img class="hero__art-mobile-base" src="assets/figma-hero-mobile.png" alt="" width="350" height="296" />
+            <img class="hero__art-mobile-rating" src="assets/figma-rating-mobile.png" alt="" width="136" height="49" />
+          </div>
         </div>
       </div>
     </section>
@@ -106,7 +110,7 @@
         <div class="why__intro-grid">
           <div class="section-head">
             <h2>
-              Why <span>Compliance Matters</span><br />
+              Why <span>Compliance Matters</span><br class="desktop-break" />
               For Research Analysts
             </h2>
           </div>

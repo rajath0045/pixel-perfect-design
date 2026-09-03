@@ -5,9 +5,9 @@
   --body: #000000;
   --primary: #4356d6;
   --primary-dark: #3345bf;
-  --primary-soft: #e2e2ff;
+  --primary-soft: #e2e7ff;
   --accent-medium: #b2c0fe;
-  --border: #e2e2ff;
+  --border: #e2e7ff;
   --container: 1240px;
   --gutter: 100px;
   --radius-sm: 8px;
@@ -133,7 +133,7 @@ a {
   border-radius: var(--radius-sm);
   border: 1px solid transparent;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
   white-space: nowrap;
   isolation: isolate;
@@ -161,7 +161,7 @@ a {
 .btn--outline {
   color: var(--primary);
   border: 2px solid var(--primary);
-  background: #fff;
+  background: transparent;
 }
 
 .btn--consultation::before {
@@ -370,11 +370,11 @@ a {
 .section-head h2 {
   margin: 0;
   color: var(--text);
-  font-weight: 700;
   letter-spacing: 0;
 }
 
 .hero h1 {
+  font-weight: 700;
   font-size: 64px;
   line-height: 85px;
   width: 620px;
@@ -473,6 +473,10 @@ a {
   object-fit: contain;
 }
 
+.hero__art-mobile {
+  display: none;
+}
+
 .why {
   position: relative;
   width: 100%;
@@ -487,11 +491,11 @@ a {
 .why::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: 28px;
-  width: 118px;
-  height: 35px;
-  background: url("assets/Group (1).svg") no-repeat center/contain;
+  left: -20px;
+  top: 800px;
+  width: 137.335px;
+  height: 34.166px;
+  background: url("assets/figma-chevrons.svg") no-repeat center/contain;
   pointer-events: none;
 }
 
@@ -553,6 +557,7 @@ a {
 .section-head h2 {
   font-size: 48px;
   line-height: 70px;
+  font-weight: 600;
   max-width: 603.5px;
 }
 
@@ -560,11 +565,11 @@ a {
   max-width: 603.5px;
   margin: 0;
   min-width: 0;
-  transform: translateY(4px);
+  transform: translateY(6px);
 }
 
 .why__grid {
-  margin-top: 80px;
+  margin-top: 36px;
   display: grid;
   grid-template-columns: minmax(0, 594px) minmax(0, 594px);
   align-items: start;
@@ -575,7 +580,7 @@ a {
   display: grid;
   place-items: center;
   position: relative;
-  transform: translateY(-46px);
+  transform: none;
 }
 
 .why__visual img {
@@ -585,15 +590,17 @@ a {
 .feature-list {
   display: grid;
   gap: 40px;
+  padding-top: 44px;
 }
 
 .feature {
   display: flex;
   align-items: flex-start;
-  gap: 28px;
+  gap: 26px;
   width: 100%;
-  min-height: 144px;
-  padding: 20px;
+  height: 142px;
+  /* Figma's 1 px centered stroke leaves a 20 px visual inset. */
+  padding: 19px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -606,9 +613,9 @@ a {
 }
 
 .feature__icon {
-  width: 32px;
-  height: 32px;
-  flex: 0 0 32px;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
   display: grid;
   place-items: center;
   border-radius: 0;
@@ -616,8 +623,8 @@ a {
 }
 
 .feature__icon img {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   object-fit: contain;
   filter: brightness(0) saturate(100%) invert(35%) sepia(55%) saturate(1230%) hue-rotate(209deg) brightness(90%) contrast(92%);
 }
@@ -627,7 +634,7 @@ a {
   font-size: 24px;
   line-height: 32px;
   color: var(--text);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .feature__body p {
@@ -774,149 +781,46 @@ a {
 }
 
 /* ==========================================================================
-   TABLET (769px - 1024px)
+   FIGMA PARITY OVERRIDES
+   These rules are sourced from the supplied 1440 px and 375 px frames. The
+   tablet layout interpolates those constraints at the requested 768 px width.
    ========================================================================== */
-@media (min-width: 769px) and (max-width: 1024px) {
-  :root {
-    --gutter: 40px;
-  }
 
-  .nav {
-    gap: 18px;
-  }
+.hero__art-desktop {
+  display: block;
+}
 
-  .nav__links {
-    gap: 14px;
-    font-size: 14px;
-  }
+.hero__art-mobile {
+  position: relative;
+  display: none;
+  width: 100%;
+  aspect-ratio: 350 / 296.13184;
+}
 
-  .brand {
-    gap: 12px;
-  }
+.hero__visual .hero__art-mobile-base {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  aspect-ratio: 350 / 296.13184;
+  object-fit: fill;
+}
 
-  .brand__mark,
-  .brand__mark img {
-    width: 36px;
-    height: 39.38px;
-  }
+.hero__visual .hero__art-mobile-rating {
+  position: absolute;
+  left: 44.142857%;
+  top: 40.522515%;
+  width: 38.857143%;
+  height: auto;
+  max-width: none;
+  aspect-ratio: 136 / 49;
+  object-fit: contain;
+}
 
-  .brand__mark {
-    flex-basis: 36px;
-  }
-
-  .brand__name {
-    font-size: 34px;
-    line-height: 40px;
-  }
-
-  .btn--sm {
-    min-width: 142px;
-    padding-inline: 14px;
-    font-size: 15px;
-  }
-
-  .hero {
-    height: auto;
-    min-height: auto;
-    padding: 58px 0 64px;
-  }
-
-  .hero .container {
-    width: min(calc(100% - 80px), 860px);
-  }
-
-  .hero__grid {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-
-  .hero__content {
-    max-width: 760px;
-    text-align: center;
-    margin-inline: auto;
-  }
-
-  .hero h1 {
-    width: auto;
-    max-width: 760px;
-    font-size: 56px;
-    line-height: 72px;
-    text-align: center;
-  }
-
-  .hero__text {
-    max-width: 680px;
-    margin: 26px auto 0;
-    text-align: center;
-  }
-
-  .hero__bullets {
-    width: fit-content;
-    max-width: 100%;
-    margin: 26px auto 0;
-    text-align: left;
-  }
-
-  .hero__actions {
-    justify-content: center;
-  }
-
-  .hero__visual {
-    margin-top: 0;
-  }
-
-  .hero__visual img {
-    width: min(100%, 640px);
-    height: auto;
-  }
-
-  .why {
-    height: auto;
-    min-height: 0;
-    padding: 54px 0 72px;
-  }
-
-  .why .container {
-    width: min(calc(100% - 80px), 860px);
-  }
-
-  .why__intro-grid {
-    grid-template-columns: 1fr;
-    gap: 26px;
-    text-align: center;
-  }
-
-  .section-head h2 {
-    max-width: 760px;
-    margin-inline: auto;
-    font-size: 48px;
-    line-height: 62px;
-  }
-
-  .section-head__text {
-    max-width: 720px;
-    margin-inline: auto;
-    font-size: 18px;
-    line-height: 32px;
-  }
-
-  .why__intro-grid::after {
-    left: auto;
-    right: 28px;
-    top: calc(100% + 8px);
-    width: 96px;
-    height: 98px;
-  }
-
+/* The desktop frame places the image row 36 px below the intro, with the
+   feature cards inset 44 px from that row. */
+@media (min-width: 1025px) {
   .why__grid {
-    margin-top: 92px;
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-
-  .why__visual img {
-    width: min(100%, 500px);
-    margin-inline: auto;
+    margin-top: 36px;
   }
 
   .why__visual {
@@ -924,15 +828,39 @@ a {
   }
 
   .feature-list {
-    width: min(100%, 594px);
-    margin-inline: auto;
+    padding-top: 44px;
+  }
+
+  .feature {
+    height: 142px;
+    min-height: 142px;
+    padding: 19px;
+    gap: 26px;
   }
 }
 
-/* ==========================================================================
-   MOBILE (max-width: 768px)
-   ========================================================================== */
-@media (max-width: 768px) {
+@media (min-width: 1440px) {
+  .hero__grid {
+    grid-template-columns: 606px 739.1343px;
+  }
+
+  .hero__visual {
+    width: 739.1343px;
+    height: 607px;
+    margin-left: -0.1343px;
+  }
+
+  .hero__visual .hero__art-desktop {
+    width: 739.1343px;
+    height: 607px;
+    max-width: none;
+    aspect-ratio: auto;
+    object-fit: fill;
+  }
+}
+
+/* Tablet navigation and stacked content, including the reviewed 768 px state. */
+@media (min-width: 561px) and (max-width: 1024px) {
   :root {
     --gutter: 24px;
   }
@@ -940,51 +868,57 @@ a {
   .site-header {
     position: static;
     background: var(--surface);
+    box-shadow: none;
   }
 
   .nav {
-    justify-content: space-between;
-    min-height: 55px;
-    gap: 16px;
+    width: calc(100% - 48px);
+    min-height: 100px;
+    height: 100px;
+    gap: 24px;
   }
 
   .brand {
-    gap: 10px;
+    gap: 16px;
   }
 
   .brand__mark,
   .brand__mark img {
-    width: 30.29px;
-    height: 33.13px;
-    flex-basis: 30.29px;
+    width: 45.71px;
+    height: 50px;
+  }
+
+  .brand__mark {
+    flex-basis: 45.71px;
   }
 
   .brand__name {
-    font-size: 33px;
-    line-height: 34px;
+    font-size: 43px;
+    line-height: 50px;
   }
 
   .nav__links {
     display: none;
   }
 
-  .btn--sm {
-    min-width: 142px;
-    min-height: 40px;
-    padding-inline: 14px;
-    font-size: 14px;
-    gap: 8px;
-  }
-
-  .site-header .btn--phone {
+  .site-header .btn--sm {
+    display: inline-flex;
+    width: 169px;
+    min-width: 169px;
+    height: 46px;
+    min-height: 46px;
     margin-left: auto;
+    padding-inline: 22px;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 500;
   }
 
   .site-header .btn--phone::before {
-    width: 18px;
-    height: 18px;
-    flex-basis: 18px;
-    background: url("assets/icon-phone.svg") center/18px 18px no-repeat;
+    width: 26px;
+    height: 26px;
+    flex-basis: 26px;
+    background-size: 26px 26px;
   }
 
   .menu-toggle {
@@ -995,397 +929,500 @@ a {
     background: #000000;
   }
 
-  .hero__content {
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .hero__grid,
-  .why__intro-grid,
-  .why__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero__visual img,
-  .why__visual img {
-    width: min(100%, 540px);
-    max-width: 540px;
-    height: auto;
-  }
-
-  .hero__visual {
-    margin-top: 24px;
-  }
-
   .hero {
     height: auto;
-    min-height: auto;
-    padding: 30px 0 52px;
+    min-height: 0;
+    padding: 58px 0 64px;
   }
 
   .hero .container {
-    width: min(calc(100% - 48px), 720px);
+    width: min(calc(100% - 48px), 860px);
+  }
+
+  .hero__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .hero__content {
+    width: 100%;
+    max-width: 720px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .hero h1 {
+    width: 480px;
+    max-width: 100%;
+    margin-inline: auto;
+    font-size: 40px;
+    line-height: 56px;
+    text-align: center;
+  }
+
+  .hero__text {
+    width: 606px;
+    max-width: 100%;
+    margin: 26px auto 0;
+    text-align: center;
+  }
+
+  .hero__bullets {
+    width: 466px;
+    max-width: 100%;
+    margin: 26px auto 0;
+    text-align: left;
+  }
+
+  .hero__actions {
+    width: 450px;
+    max-width: 100%;
+    margin: 26px auto 0;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .hero__actions .btn {
+    width: 213px;
+    min-width: 213px;
+    height: 46px;
+  }
+
+  .hero__visual {
+    width: min(100%, 594px);
+    margin: 36px auto 0;
+  }
+
+  .hero__visual .hero__art-desktop {
+    width: 100%;
+    max-width: 594px;
+    height: auto;
   }
 
   .why {
     height: auto;
-    padding: 50px 0 48px;
+    min-height: 0;
+    padding: 54px 0 72px;
+    overflow: hidden;
   }
 
   .why .container {
-    width: min(calc(100% - 48px), 720px);
+    width: calc(100% - 48px);
   }
 
   .why::after {
     display: none;
   }
 
-  .why__intro-grid::after {
-    display: block;
-    left: auto;
-    right: 0;
-    top: calc(100% + 12px);
-    width: 95px;
-    height: 97px;
-  }
-
-  .hero h1 {
-    width: auto;
-    font-size: 38px;
-    line-height: 47px;
-    max-width: 640px;
-    margin-inline: auto;
+  .why__intro-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 26px;
     text-align: center;
   }
 
-  .section-head,
-  .why__intro-grid,
-  .section-head__text {
-    text-align: center;
-  }
-
-  .section-head h2,
-  .section-head__text {
-    margin-inline: auto;
-  }
-
-  .hero__text {
-    margin: 18px auto 0;
-    max-width: 660px;
-    text-align: center;
-  }
-
-  .hero__bullets {
-    width: 430px;
-    max-width: 100%;
-    margin: 28px auto 0;
-    text-align: left;
-  }
-
-  .hero__actions {
-    gap: 16px;
-    margin-top: 28px;
-    justify-content: center;
-    flex-wrap: nowrap;
+  .desktop-break {
+    display: none;
   }
 
   .section-head h2 {
+    width: 606px;
+    max-width: 100%;
+    margin-inline: auto;
     font-size: 40px;
-    line-height: 48px;
+    line-height: 56px;
+    font-weight: 600;
+    text-align: center;
   }
 
-  .hero__actions .btn {
-    width: 213px;
-    min-height: 46px;
+  .section-head__text {
+    width: 606px;
+    max-width: 100%;
+    margin-inline: auto;
+    font-size: 18px;
+    line-height: 32px;
+    text-align: center;
+    transform: none;
+  }
+
+  .why__intro-grid::after {
+    display: block;
+    left: auto;
+    right: -19px;
+    top: calc(100% + 14px);
+    width: 95.2px;
+    height: 97.25px;
   }
 
   .why__grid {
-    gap: 42px;
-  }
-
-  .why__visual img {
-    width: min(100%, 420px);
-    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 36px;
+    gap: 26px;
   }
 
   .why__visual {
+    width: min(100%, 594px);
+    margin-inline: auto;
     transform: none;
+  }
+
+  .why__visual img {
+    width: 100%;
+    max-width: 594px;
   }
 
   .why__visual::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -24px;
-    width: 81px;
-    height: 24px;
-    background: url("assets/Group (1).svg") no-repeat center/contain;
+    top: calc(100% - 29px);
+    width: 118px;
+    height: 29.36px;
+    background: url("assets/figma-chevrons.svg") no-repeat center/contain;
     pointer-events: none;
-  }
-
-  /* Mobile menu CTA overrides */
-  .mobile-menu__cta.btn--phone::before {
-    width: 26px;
-    flex: 0 0 26px;
-    opacity: 1;
-    transform: none;
-  }
-
-  .mobile-menu__cta.btn--phone:hover::before,
-  .mobile-menu__cta.btn--phone:focus-visible::before {
-    width: 26px;
-    flex: 0 0 26px;
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .mobile-menu__cta:hover,
-  .mobile-menu__cta:focus-visible {
-    background: #001fb8;
-    border-color: #001fb8;
-    color: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: 0 14px 24px rgba(0, 31, 184, 0.24);
-  }
-}
-
-@media (min-width: 700px) and (max-width: 768px) {
-  .hero {
-    padding: 58px 0 64px;
-  }
-
-  .hero h1 {
-    width: auto;
-    max-width: 700px;
-    font-size: 48px;
-    line-height: 64px;
-  }
-
-  .hero__text {
-    max-width: 668px;
-    margin-top: 26px;
-  }
-
-  .hero__bullets {
-    margin-top: 26px;
-  }
-
-  .hero__actions {
-    margin-top: 30px;
-  }
-
-  .hero__visual {
-    margin-top: 24px;
-  }
-
-  .hero__visual img {
-    width: min(100%, 640px);
-    max-width: 640px;
-  }
-
-  .why {
-    padding: 54px 0 72px;
-  }
-
-  .section-head h2 {
-    max-width: 700px;
-    font-size: 48px;
-    line-height: 62px;
-    margin-inline: 0;
-    text-align: left;
-  }
-
-  .section-head__text {
-    max-width: 680px;
-  }
-
-  .why__intro-grid::after {
-    right: 4px;
-    width: 78px;
-    height: 80px;
-  }
-
-  .why__grid {
-    margin-top: 92px;
-    gap: 42px;
-  }
-
-  .why__visual img {
-    width: min(100%, 500px);
   }
 
   .feature-list {
     width: min(100%, 594px);
     margin-inline: auto;
+    padding-top: 0;
+    gap: 40px;
   }
 
   .feature {
-    min-height: 144px;
+    width: 100%;
+    height: 142px;
+    min-height: 142px;
+    padding: 19px;
+    gap: 26px;
   }
 }
 
-/* ==========================================================================
-   SMALL MOBILE (max-width: 560px / 360px)
-   ========================================================================== */
+/* At exactly the reviewed tablet breakpoint, use the compact Figma artwork
+   composition so both floating cards retain their intended placement. */
+@media (min-width: 561px) and (max-width: 768px) {
+  .hero__art-desktop {
+    display: none;
+  }
+
+  .hero__art-mobile {
+    display: block;
+  }
+}
+
+/* Mobile frame: exact 375 px Figma measurements with flexible overflow for
+   nearby narrow widths. */
 @media (max-width: 560px) {
   :root {
     --gutter: 16px;
   }
 
-  .btn--sm {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .site-header {
+    position: static;
+    height: 54px;
+    min-height: 54px;
+    background: #ffffff;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.11);
+  }
+
+  .nav {
+    width: min(calc(100% - 32px), 343px);
+    height: 54px;
+    min-height: 54px;
+    gap: 16px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .brand__mark,
+  .brand__mark img {
+    width: 30.2903px;
+    height: 33.1332px;
+  }
+
+  .brand__mark {
+    flex-basis: 30.2903px;
+  }
+
+  .brand__name {
+    font-size: 33px;
+    line-height: 34px;
+  }
+
+  .site-header .btn--sm,
+  .nav__links {
     display: none;
   }
 
-  .hero {
-    padding-top: 26px;
+  .menu-toggle {
+    display: flex;
+    width: 24px;
+    height: 24px;
   }
 
-  .hero h1 {
-    width: auto;
-    font-size: 40px;
-    line-height: 48px;
-    max-width: 100%;
-    text-align: center;
+  .menu-toggle span {
+    background: #000000;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1px;
+    padding-bottom: 36px;
+  }
+
+  .hero {
+    height: auto;
+    min-height: 0;
+    padding: 0 0 19.875px;
+    overflow: hidden;
+  }
+
+  .hero .container,
+  .why .container {
+    width: min(calc(100% - 32px), 343px);
+  }
+
+  .hero__grid {
+    display: block;
   }
 
   .hero__content {
+    width: 100%;
+    max-width: 343px;
+    padding-top: 26px;
     text-align: center;
   }
 
-  .why__intro-grid,
-  .section-head,
-  .section-head__text {
+  .hero h1 {
+    width: 343px;
+    max-width: 100%;
+    margin-inline: auto;
+    font-size: 34px;
+    line-height: 48px;
+    font-weight: 700;
     text-align: center;
   }
 
   .hero__text {
+    width: 343px;
+    max-width: 100%;
+    margin: 26px auto 0;
     font-size: 18px;
     line-height: 32px;
-    max-width: 100%;
     text-align: center;
   }
 
-  .section-head__text {
-    font-size: 18px;
-    line-height: 32px;
-  }
-
-  .section-head h2 {
-    font-size: 40px;
-    line-height: 48px;
-  }
-
   .hero__bullets {
+    width: 315px;
+    max-width: calc(100% - 28px);
     margin: 26px auto 0;
-    width: 100%;
+    gap: 6px;
     text-align: left;
   }
 
   .hero__bullets li {
+    gap: 16px;
     font-size: 18px;
     line-height: 32px;
   }
 
-  .hero__visual img {
-    width: 100%;
-    max-width: 350px;
-    height: auto;
-  }
-
-  .hero__visual {
-    margin-top: 36px;
+  .hero__bullets li::before {
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+    margin-top: 4px;
+    background-size: 18px 18px;
   }
 
   .hero__actions {
-    flex-wrap: wrap;
-    justify-content: center;
+    width: 343px;
+    max-width: 100%;
+    margin: 26px auto 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .hero__actions .btn {
     width: 100%;
+    min-width: 0;
+    height: 46px;
+    min-height: 46px;
   }
 
-  .why .container,
-  .hero .container {
-    width: min(calc(100% - 32px), 343px);
+  .hero__visual {
+    width: 350px;
+    max-width: none;
+    margin: 36px 0 0 50%;
+    transform: translateX(-50%);
+  }
+
+  .hero__art-desktop {
+    display: none;
+  }
+
+  .hero__art-mobile {
+    display: block;
+    width: 350px;
   }
 
   .why {
-    padding-top: 0;
+    height: auto;
+    min-height: 0;
+    margin-top: 50px;
+    padding: 0;
+    overflow: hidden;
   }
 
-  .section-head h2 br {
+  .why::after {
     display: none;
   }
 
   .why__intro-grid {
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 26px;
+    text-align: center;
+  }
+
+  .desktop-break {
+    display: none;
+  }
+
+  .section-head h2 {
+    width: 343px;
+    max-width: 100%;
+    margin-inline: auto;
+    font-size: 34px;
+    line-height: 48px;
+    font-weight: 600;
+    text-align: center;
   }
 
   .section-head__text {
-    margin-top: 0;
+    width: 343px;
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 32px;
+    text-align: center;
+    transform: none;
   }
 
   .why__intro-grid::after {
+    display: block;
+    left: auto;
     right: -19px;
-    top: calc(100% + 12px);
-    width: 95px;
-    height: 97px;
-  }
-
-  .why__visual img {
-    width: min(100%, 343px);
+    top: calc(100% + 14px);
+    width: 95.2px;
+    height: 97.25px;
   }
 
   .why__grid {
+    display: grid;
+    grid-template-columns: 1fr;
     margin-top: 36px;
     gap: 26px;
   }
 
+  .why__visual {
+    width: 343px;
+    max-width: 100%;
+    margin-inline: auto;
+    transform: none;
+  }
+
+  .why__visual img {
+    width: 343px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .why__visual::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 329px;
+    width: 85px;
+    height: 21.146px;
+    background: url("assets/figma-chevrons.svg") no-repeat center/contain;
+    pointer-events: none;
+  }
+
   .feature-list {
+    width: 343px;
+    max-width: 100%;
+    margin-inline: auto;
+    padding-top: 0;
     gap: 26px;
   }
 
   .feature {
-    padding: 24px;
-    gap: 20px;
+    width: 343px;
+    max-width: 100%;
+    min-height: 0;
+    padding: 19px;
+    gap: 26px;
+  }
+
+  .feature:nth-child(1) {
+    height: 177px;
+  }
+
+  .feature:nth-child(2) {
+    height: 204px;
+  }
+
+  .feature:nth-child(3) {
+    height: 182px;
+  }
+
+  .feature__icon,
+  .feature__icon img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .feature__icon {
+    flex: 0 0 36px;
+  }
+
+  .feature__body {
+    width: 241px;
+    min-width: 0;
   }
 
   .feature__body h3 {
     font-size: 24px;
     line-height: 32px;
+    font-weight: 600;
   }
 
   .feature__body p {
+    margin-top: 11px;
     font-size: 18px;
-    line-height: 29px;
+    line-height: 32px;
   }
 }
 
-@media (max-width: 360px) {
-  .brand__name {
-    font-size: 20px;
-  }
-
-  .hero h1 {
-    width: auto;
-    font-size: 36px;
-    line-height: 44px;
-  }
-
-  .hero__text,
-  .section-head__text,
-  .hero__bullets li {
-    font-size: 16px;
-    line-height: 28px;
-  }
-
-  .section-head h2 {
-    font-size: 34px;
-    line-height: 42px;
-  }
-
+@media (max-width: 369px) {
   .feature {
-    padding: 18px 16px;
+    height: auto !important;
+    min-height: 177px;
+  }
+
+  .feature__body {
+    width: calc(100% - 62px);
   }
 }
